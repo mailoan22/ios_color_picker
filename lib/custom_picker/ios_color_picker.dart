@@ -43,7 +43,7 @@ class _IosColorPickerState extends State<IosColorPicker> {
         ),
         Container(
           width: maxWidth(context),
-          height: 340 + componentsHeight(context),
+          height: 350 + componentsHeight(context),
           decoration: BoxDecoration(
             color: backgroundColor.withValues(alpha: 0.98),
             borderRadius: BorderRadius.only(
@@ -60,35 +60,35 @@ class _IosColorPickerState extends State<IosColorPicker> {
                   16,
                   0,
                   8,
-                  2,
+                  12,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const SizedBox(
-                      width: 40,
-                    ),
-                    Text(
-                      'Colors',
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          fontSize: 17,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w700),
-                    ),
                     IconButton(
                       highlightColor: Colors.transparent,
                       onPressed: () => Navigator.pop(context),
                       icon: Container(
-                        padding: EdgeInsets.all(4),
+                        padding: EdgeInsets.all(5),
                         decoration: BoxDecoration(
-                            color: Color(0xff3A3A3B), shape: BoxShape.circle),
+                            color: Color(0xffE8E8E8), shape: BoxShape.circle),
                         child: Icon(
                           Icons.close_rounded,
-                          color: Color(0xffA4A4AA),
-                          size: 20,
+                          color: Color(0xff141E3F),
+                          size: 30,
                         ),
                       ),
+                    ),
+                    Text(
+                      'Colors',
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontSize: 25,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    const SizedBox(
+                      width: 40,
                     ),
                   ],
                 ),

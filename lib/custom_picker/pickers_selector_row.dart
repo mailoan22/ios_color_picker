@@ -8,6 +8,7 @@ import 'helpers/cache_helper.dart';
 
 class PickersSelectorRow extends StatefulWidget {
   final ValueChanged<Color> onColorChanged;
+
   const PickersSelectorRow({super.key, required this.onColorChanged});
 
   @override
@@ -43,13 +44,13 @@ class _PickersSelectorRowState extends State<PickersSelectorRow> {
     return Column(
       children: [
         Container(
-          height: 32,
+          height: 45,
           margin: const EdgeInsets.symmetric(horizontal: 16),
           padding: const EdgeInsets.all(2),
           width: double.infinity,
           decoration: BoxDecoration(
               color: sliderColor,
-              borderRadius: const BorderRadius.all(Radius.circular(9))),
+              borderRadius: const BorderRadius.all(Radius.circular(15))),
           child: Stack(
             alignment: Alignment.center,
             children: [
@@ -64,12 +65,9 @@ class _PickersSelectorRowState extends State<PickersSelectorRow> {
                         Spacer(),
                         if (index != 2)
                           Container(
-                              height: 16,
-                              width: 1,
-                              color: const Color(0xffCFCFD5)
-                                  .withValues(alpha: 0.3))
+                              height: 29, width: 1, color: Color(0xff999999))
                         else
-                          const SizedBox(height: 16, width: 1),
+                          const SizedBox(height: 29, width: 1),
                       ],
                     ),
                   );
@@ -87,17 +85,12 @@ class _PickersSelectorRowState extends State<PickersSelectorRow> {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                       color: selectedSliderColor,
-                      borderRadius: const BorderRadius.all(Radius.circular(7)),
+                      borderRadius: const BorderRadius.all(Radius.circular(12)),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.04),
-                          blurRadius: 1,
-                          offset: const Offset(0, 3),
-                        ),
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.12),
-                          blurRadius: 8,
-                          offset: const Offset(0, 3),
+                          color: Colors.black.withValues(alpha: 0.25),
+                          blurRadius: 10,
+                          offset: const Offset(0, 0),
                         ),
                       ]),
                 ),
@@ -121,11 +114,9 @@ class _PickersSelectorRowState extends State<PickersSelectorRow> {
                                   .textTheme
                                   .bodyMedium
                                   ?.copyWith(
-                                    color: Colors.white,
-                                    fontSize: 13,
-                                    fontWeight: typeIndex == index
-                                        ? FontWeight.w700
-                                        : FontWeight.w600,
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
                                   ),
                             ),
                           ),

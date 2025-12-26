@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 ///Pickers Components height
 double componentsHeight(BuildContext context) {
@@ -18,10 +19,10 @@ enum ColorsType {
   hslWithSaturation,
 }
 
-const Color backgroundColor = Color(0xff232421);
+const Color backgroundColor = Color(0xffF1F1F1);
 const Color valueColor = Color(0xff1C1C1E);
-const Color sliderColor = Color(0xff38393B);
-const Color selectedSliderColor = Color(0xff6F6F73);
+const Color sliderColor = Color(0xffE4E4E4);
+const Color selectedSliderColor = Colors.white;
 
 enum TrackType {
   hue,
