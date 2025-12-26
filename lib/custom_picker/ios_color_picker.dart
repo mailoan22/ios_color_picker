@@ -45,7 +45,7 @@ class _IosColorPickerState extends State<IosColorPicker> {
           width: maxWidth(context),
           height: 350 + componentsHeight(context),
           decoration: BoxDecoration(
-            color: backgroundColor.withValues(alpha: 0.98),
+            color: backgroundColor,
             borderRadius: BorderRadius.only(
               topRight: Radius.circular(10),
               topLeft: Radius.circular(10),
@@ -87,14 +87,28 @@ class _IosColorPickerState extends State<IosColorPicker> {
                           color: Colors.black,
                           fontWeight: FontWeight.w600),
                     ),
-                    const SizedBox(
-                      width: 40,
+                    IconButton(
+                      highlightColor: Colors.transparent,
+                      onPressed: () {
+                        widget.onColorSelected(colorController.value);
+                        Navigator.pop(context);
+                      },
+                      icon: Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            color: Color(0xffE8E8E8), shape: BoxShape.circle),
+                        child: Icon(
+                          Icons.check,
+                          color: Color(0xff141E3F),
+                          size: 30,
+                        ),
+                      ),
                     ),
                   ],
                 ),
               ),
               PickersSelectorRow(
-                onColorChanged: widget.onColorSelected,
+                onColorChanged: (color) {},
               ),
 
               ///ALL
@@ -122,7 +136,6 @@ class _IosColorPickerState extends State<IosColorPicker> {
                                 TrackType.alpha, HSVColor.fromColor(color),
                                 small: false, (v) {
                               colorController.updateOpacity(v.alpha);
-                              widget.onColorSelected(colorController.value);
                             });
                           },
                         ),
@@ -216,7 +229,7 @@ class _IosColorPickerState extends State<IosColorPicker> {
                     ],
                   ),
                   HistoryColors(
-                    onColorChanged: widget.onColorSelected,
+                    onColorChanged: (color) {},
                   )
                 ],
               ),
