@@ -9,6 +9,7 @@ import 'helpers/cache_helper.dart';
 
 class HistoryColors extends StatefulWidget {
   final ValueChanged<Color> onColorChanged;
+
   const HistoryColors({super.key, required this.onColorChanged});
 
   @override
@@ -149,15 +150,20 @@ class _HistoryColorsState extends State<HistoryColors> {
                         });
                         showTooltip();
                       },
-                      showBarrier: false,
-                      // showDropBoxFilter: true,
-                      hasShadow: false,
-                      sigmaY: 16,
-                      sigmaX: 16,
-                      arrowLength: 8,
-                      arrowTipDistance: 17,
-                      bubbleDimensions: EdgeInsets.zero,
-                      popupDirection: TooltipDirection.up,
+                      barrierConfig: BarrierConfiguration(
+                        show: false,
+                        showBlur: false,
+                        sigmaX: 16,
+                        sigmaY: 16,
+                      ),
+                      arrowConfig:
+                          ArrowConfiguration(length: 8, tipDistance: 17),
+                      style: TooltipStyle(
+                        bubbleDimensions: EdgeInsets.zero,
+                      ),
+                      positionConfig: PositionConfiguration(
+                        preferredDirection: TooltipDirection.up,
+                      ),
                       controller: toolTip == (index + (pageIndex * 10))
                           ? _tipController
                           : null,

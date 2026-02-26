@@ -13,7 +13,7 @@ dependencies:
 
   shared_preferences: ^2.4.0
   smooth_page_indicator: ^1.2.0+3
-  super_tooltip: ^2.0.9
+  super_tooltip: ^2.1.1
 
   flutter_web_plugins:
     sdk: flutter
